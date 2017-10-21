@@ -1,0 +1,24 @@
+version: "3"
+services:
+    wordpress:
+        image: wordpress:latest
+        build: ./my-wordpress
+        ports:
+            - "9000:80"
+        depends_on:
+            - db
+        environment:
+            WORDPRESS_DB_HOST: "db:3306"
+        env_file: .env
+        volumes:
+            - ./themes/your_theme:/var/www/html/wp-content/themes/your_theme # Change your_theme
+    db:
+        image: mysql:latest
+        env_file: .env
+        volumes:
+            - db-data:/var/lib/mysql
+            - ./db-data/mysql.dump.sql:/docker-entrypoint-initdb.d/install_wordpress.sql
+ 
+volumes:
+    db-data:
+        driver: local
