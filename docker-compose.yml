@@ -2,7 +2,7 @@ version: "3"
 services:
     wordpress:
         image: wordpress:latest
-        build: ./my-wordpress
+        build: .
         ports:
             - "9000:80"
         depends_on:
@@ -11,7 +11,7 @@ services:
             WORDPRESS_DB_HOST: "db:3306"
         env_file: .env
         volumes:
-            - ./themes/your_theme:/var/www/html/wp-content/themes/your_theme # Change your_theme
+            - ./theme-sync/your_theme:/var/www/html/wp-content/theme-sync/your_theme # Change your_theme
     db:
         image: mysql:latest
         env_file: .env

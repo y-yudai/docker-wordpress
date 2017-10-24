@@ -15,12 +15,11 @@ $ cd develop-wordpress/
 set your theme
 ```
 $ mv env.sample.txt .env
-$ mkdir themes
 ```
 
 ```diff
 volumes:
-    - ./themes/your_theme:/var/www/html/wp-content/themes/your_theme # Change your_theme
+    - ./theme-sync/your_theme:/var/www/html/wp-content/theme-sync/your_theme # Change your_theme
 ```
 
 ## Setup your default database
