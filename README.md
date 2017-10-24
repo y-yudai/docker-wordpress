@@ -10,8 +10,18 @@ $ cp -r docker-wordpress/* develop-wordpress/
 $ cd develop-wordpress/
 ```
 
-## Setup your theme
-Set themes
+## Setup
+
+set your theme
+```
+$ mv env.sample.txt .env
+$ mkdir themes
+```
+
+```diff
+volumes:
+    - ./themes/your_theme:/var/www/html/wp-content/themes/your_theme # Change your_theme
+```
 
 ## Setup your default database
 
