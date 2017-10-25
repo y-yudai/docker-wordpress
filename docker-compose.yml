@@ -11,7 +11,7 @@ services:
             WORDPRESS_DB_HOST: "db:3306"
         env_file: .env
         volumes:
-            - ./theme-sync/your_theme:/var/www/html/wp-content/theme-sync/your_theme # Change your_theme
+            - ./theme-sync/your_theme:/var/www/html/wp-content/themes/your_theme # Change your_theme
     db:
         image: mysql:latest
         env_file: .env
