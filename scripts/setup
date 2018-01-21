@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+cp .env.sample .env
+mkdir -p theme-sync
+docker-compose build
+

@@ -1,0 +1,6 @@
+# no thx
+node_modules
+
+# Folder view configuration files
+*.DS_Store
+.vscode
