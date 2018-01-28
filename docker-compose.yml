@@ -12,13 +12,14 @@ services:
         env_file: .env
         volumes:
             - ./theme-sync/your_theme:/var/www/html/wp-content/themes/your_theme # Change your_theme
+            - ./wp-plugin-template:/var/www/html/wp-content/plugins/wp-plugin-template # Change wp-plugin-template
     db:
         image: mysql:latest
         env_file: .env
 #        volumes:
 #            - db-data:/var/lib/mysql
 #            - ./db-data/mysql.dump.sql:/docker-entrypoint-initdb.d/install_wordpress.sql
- 
+
 volumes:
     db-data:
         driver: local
